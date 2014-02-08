@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+        classpath 'com.jakewharton.hugo:hugo-plugin:1.0.1'
+    }
+}
+
+def isReleaseBuild() {
+    return version.contains("SNAPSHOT") == false
+}
+
+allprojects {
+    version = VERSION_NAME
+    group = GROUP
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+apply plugin: 'android-reporting'

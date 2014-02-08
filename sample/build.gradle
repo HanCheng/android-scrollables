@@ -1,0 +1,23 @@
+apply plugin: 'android'
+apply plugin: 'hugo'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile project(':android-scrollables')
+    compile 'com.google.guava:guava:16.0'
+    compile 'com.jakewharton:butterknife:4.0.1'
+    compile 'com.android.support:appcompat-v7:19.0.+'
+    compile 'com.android.support:support-v4:19.0.0'
+
+}
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.allJava
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.0.0'
+}
