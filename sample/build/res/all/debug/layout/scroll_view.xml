@@ -1,0 +1,29 @@
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <com.dmccartney.android.scrollables.ScrollView
+        android:id="@+id/scroll_view_sample"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+          <ImageView
+              android:src="@drawable/fade"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+        </com.dmccartney.android.scrollables.ScrollView>
+      <TextView android:id="@+id/scroll_view_info"
+          android:layout_gravity="center"
+          android:padding="10dp"
+          android:text="(x, y)"
+          android:textColor="@color/gray"
+          android:background="@color/white"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+  </FrameLayout>
+</RelativeLayout>
+
+<!-- From: file:/Users/danielmccartney/dev/self/android-scrollables/sample/src/main/res/layout/scroll_view.xml -->

@@ -15,11 +15,26 @@
         android:supportsRtl="true">
         <activity
             android:name=".ScrollablesActivity"
-            android:label="Scrollables">
+            android:label="Scrollables"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ScrollViewActivity"
+            android:label="ScrollView">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ScrollablesActivity" />
+        </activity>
+        <activity
+            android:name=".ListViewActivity"
+            android:label="ListView">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ScrollablesActivity" />
         </activity>
     </application>
 
