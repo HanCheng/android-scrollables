@@ -22,6 +22,7 @@ gradle/
 /*/local.properties
 /*/out
 /*/*/build
+sample/build
 /*/*/production
 *.iml
 *.iws
