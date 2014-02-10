@@ -2,6 +2,8 @@
 
 This contains miscellaneous scrolling tools that I've found useful in my work.
 
+[![Build Status](https://travis-ci.org/dmccartney/android-scrollables.png?branch=master)](https://travis-ci.org/dmccartney/android-scrollables)
+
 ## `com.dmccartney.android.ListView`
 This is an extension of the default `android.widget.ListView`.
 It supports multiple `OnScrollListeners` 
