@@ -1,3 +1,0 @@
-int color scrollables_transparent 0x7f020000
-int dimen scrollables_touchable_height 0x7f030000
-int dimen scrollables_touchable_width 0x7f030001

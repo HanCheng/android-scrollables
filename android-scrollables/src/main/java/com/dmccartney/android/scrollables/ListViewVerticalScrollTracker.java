@@ -2,10 +2,9 @@ package com.dmccartney.android.scrollables;
 
 
 import android.util.SparseArray;
-import android.widget.AbsListView;
 
 /*
- * This tracks change in the vertical scroll position of a ListView.
+ * This tracks change in the vertical scroll position of a trackable ListView.
  * It gives you the "deltaY" of your scroll position by tracking the ongoing top-position changes of
  * visible children.
  *
@@ -13,11 +12,15 @@ import android.widget.AbsListView;
  *        scroll position, and to receive the change in vertical scroll position (deltaY).
  */
 public class ListViewVerticalScrollTracker {
-    private final AbsListView list;
+    private final Trackable list;
     private SparseArray<Integer> positions;
 
-    public ListViewVerticalScrollTracker(final AbsListView listView){
-        list = listView;
+    public static interface Trackable {
+        int getChildOffset(int position);
+    }
+
+    public ListViewVerticalScrollTracker(final Trackable list){
+        this.list = list;
     }
 
     public int calculateDeltaYFromScrollPositions(int firstVisiblePosition, int visibleItemCount){
@@ -25,7 +28,7 @@ public class ListViewVerticalScrollTracker {
 
         positions = new SparseArray<Integer>(visibleItemCount);
         for(int i = 0; i < visibleItemCount; i++){
-            positions.put(firstVisiblePosition + i, list.getChildAt(i).getTop());
+            positions.put(firstVisiblePosition + i, list.getChildOffset(i));
         }
 
         if(previousPositions != null){
@@ -39,9 +42,5 @@ public class ListViewVerticalScrollTracker {
             }
         }
         return 0;
-    }
-
-    public void clear(){
-        positions = null;
     }
 }
